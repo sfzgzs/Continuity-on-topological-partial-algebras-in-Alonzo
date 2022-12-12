@@ -1,0 +1,56 @@
+\documentclass[11pt,fleqn]{article}
+
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{url}
+
+\setlength {\topmargin} {-.15in}
+\setlength {\textheight} {8.6in}
+
+\input{simple-type-theory-def}
+\input{alonzo-notation}
+
+% Credit to Gabriel Devenyi for this bibliography cfg:
+% github.com/gdevenyi/mcmaster.latex
+\usepackage[
+  style=numeric-comp,
+  backend=biber,
+  sorting=none,
+  backref=true,
+  maxnames=99,
+  alldates=iso,
+  seconds=true
+]{biblatex} % bibliography
+\addbibresource{references.bib}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\bc
+  {\large \textbf{CAS 760}}\\[2mm]
+  {\large \textbf{Logic for Practical Use}}\\[2mm]
+  {\large \textbf{Fall 2022}}\\[8mm]
+  {\huge \textbf{Development Project: Continuity on Topological Partial Algebras}}\\[6mm]
+  {\large \textbf{Jacky Zheng and Fateme Ghasemi }}\\[2mm]
+  {\large \textbf{McMaster University}}\\[6mm]
+  {\large {\today}}
+
+\ec
+\newpage
+\tableofcontents
+\newpage
+%------------------------------------------------------------------------------
+% Introduction
+%------------------------------------------------------------------------------
+\section{Introduction}
+Hi
+%------------------------------------------------------------------------------
+% Bibliography
+%------------------------------------------------------------------------------
+\printbibliography[heading=bibintoc]
+
+\end{document}
