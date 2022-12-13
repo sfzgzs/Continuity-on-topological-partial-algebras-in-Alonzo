@@ -1,9 +1,9 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
-[2] Config.pm:310> INFO - Logfile is 'write-up.blg'
-[143] biber:340> INFO - === Mon Dec 12, 2022, 16:12:33
-[162] Biber.pm:418> INFO - Reading 'write-up.bcf'
-[280] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
-[303] bbl.pm:654> INFO - Writing 'write-up.bbl' with encoding 'UTF-8'
-[303] bbl.pm:757> INFO - Output to write-up.bbl
-[304] Biber.pm:130> WARN - The file 'write-up.bcf' does not contain any citations!
-[304] Biber.pm:132> INFO - WARNINGS: 1
+[0] Config.pm:310> INFO - Logfile is 'write-up.blg'
+[105] biber:340> INFO - === Tue Dec 13, 2022, 11:36:36
+[124] Biber.pm:418> INFO - Reading 'write-up.bcf'
+[214] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
+[236] bbl.pm:654> INFO - Writing 'write-up.bbl' with encoding 'UTF-8'
+[237] bbl.pm:757> INFO - Output to write-up.bbl
+[237] Biber.pm:130> WARN - The file 'write-up.bcf' does not contain any citations!
+[237] Biber.pm:132> INFO - WARNINGS: 1
