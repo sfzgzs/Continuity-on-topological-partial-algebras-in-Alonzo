@@ -35,7 +35,7 @@
   {\large \textbf{Logic for Practical Use}}\\[2mm]
   {\large \textbf{Fall 2022}}\\[8mm]
   {\huge \textbf{Development Project: Continuity on Topological Partial Algebras}}\\[6mm]
-  {\large \textbf{Jacky Zheng and Fateme Ghasemi }}\\[2mm]
+  {\large \textbf{Zheheng Zhao and Fateme Ghasemi }}\\[2mm]
   {\large \textbf{McMaster University}}\\[6mm]
   {\large {\today}}
 
@@ -54,43 +54,69 @@ While-Computability is a fundamental model for imperative programming on any dat
 Continuous data types are modeled by topological many-sorted algebras.
 The topology defines a concept of closeness and hence the process of approximation for data.
 
-\subsection{What is a Topological Partial Algebra?}
+\section{Topological algebra}
+% Topological algebra helps convert topological problems into algebraic problems which are easier to solve in practice.
+Topological algebra is an algebra which is also a topological space at same time.
 
 \begin{df}
-A Topological Partial Algebra $\mathbb{A} = (A, (f_i)_{i \in I})$ is a
-partial algebra with topologies on
-carriers such that each of the basic functions $f_i$ is 
-\textcolor{teal}{continuous} on the product topology.
-\end{df}
-\begin{df}
-  A function $f:X \rightarrow Y $ is continuous if the pre-image of every open set in $Y$ is \textcolor{teal}{open} in $X$. 
-\end{df}
-\begin{df}
-  a function $f$ is open if $\forall V : Y \rightarrow \omicron \cdot V \in \mName{ISOPEN} \Rightarrow (\mName{PREIMAGE}(f)) (V) \in$ ISOPEN.
+    A topological algebra over a topological field is a topological vector space together with a bilinear operation that is continuous in some definite sense.
 \end{df}
 
-
-  \begin{theory-def}{Topological partial algebra}
-    {$\mName{TOP-PAR-ALG}$.}
-    {I, A}
-    {$(f_i : A^{\alpha_i} \rightarrow A^{\beta_i} )_{i \in I}$,PREIMAGE$_{ (A \rightarrow A) \rightarrow \{ A \} \rightarrow \{ A \}}$.}
+\subsection{Topological algebra in Alonzo}
+\begin{theory-def}{Topological algebra}
+    {$\mName{TOP-ALG}$.}
+    {A}
+    {$\cup_{\cFunTyBX {A}{A}{A}}$, $\cap_{\cFunTyBX {A}{A}{A}}$.}
     {
     \be
         \item $\emptyset_{\{ A\} } \in \mName{ISOPEN} $
         \hfill (Empty set is in the collection of open sets).
         \item  $U_{ \{ A\} } \in \mName{ISOPEN} $ \hfill (The base set itself is in the collection of open sets).
-        \item  Any (finite or infinite) union of sets that are open is itself open
-        \item  Any finite intersection of sets that are open is itself open
-    
-        \item $\forall V : A  \rightarrow \omicron \cdot V \in \mName{ISOPEN} \Rightarrow \mName{PREIMAGE(V)} \in \mName{ISOPEN}$ 
-        \hfill (Continuity).
-        \item $\forall i : I \text{ } \mName{PREIMAGE} (i, \alpha_i, \beta_i) \downarrow$
-        \item PREIMAGE = $\lambda i: I \lambda \alpha_i, \beta_i : N \cdot \text{ }\lambda f : A^{\alpha_i} \rightarrow A^{\beta_i} \cdot \\
-        \hspace{3.2cm}\lambda V: A^{\beta_i} \rightarrow \omicron \cdot I\text{ }K:A^{\alpha_i} \rightarrow \omicron \cdot \\
-        \hspace{3.7cm}\forall x \in K \text{ }f(x) \downarrow \land \cup_{x\in K} f(x) = V $
+        % \item  Any (finite or infinite) union of sets that are open is itself open
+        \item $\cForallX {a_i}{A} (a_i \in \mName{ISOPEN}) \Rightarrow (\bigcup a_i \in \mName{ISOPEN})$ 
+        % \item  Any finite intersection of sets that are open is itself open
+        \item $\cForallX {a_i}{A} ((a_i \in \mName{ISOPEN}) \land (i \neq \infty)) \Rightarrow (\bigcap a_i \in \mName{ISOPEN})$
     \ee
     }
 \end{theory-def}
+
+\section{What is a Topological Partial Algebra?}
+
+\begin{df}
+% A Topological Partial Algebra $\mathbb{A} = (A, (f_i)_{i \in I})$ is a
+% partial algebra with topologies on
+% carriers such that each of the basic functions $f_i$ is 
+% \textcolor{teal}{continuous} on the product topology.
+A Topological Partial Algebra is a partial algebra with topologies on carriers such that each of the basic functions $f$ is \textcolor{teal}{continuous} on the product topology.
+\end{df}
+
+\begin{df}
+  % A function $f:X \rightarrow Y $ is continuous if the pre-image of every open set in $Y$ is \textcolor{teal}{open} in $X$. 
+  A function $f$ is continuous if the pre-image of every open set in its range is open in its domain.
+\end{df}
+
+\begin{df}
+  % a function $f$ is open if $\forall V : Y \rightarrow \omicron \cdot V \in \mName{ISOPEN} \Rightarrow (\mName{PREIMAGE}(f)) (V) \in$ ISOPEN.
+  a function $f$ is open if its domain is open implies the range of its pre-image is also open.
+\end{df}
+
+\subsection{Topological partial algebra in Alonzo}
+
+  \begin{theory-ext}{Topological partial algebra}
+    {$\mName{TOP-PAR-ALG}$.}
+    {$\mName{TOP-ALG}$.}
+    {I}
+    {$(f_i : A^{\alpha_i} \rightarrow A^{\beta_i} )_{i \in I}$,PREIMAGE$_{ (A \rightarrow A) \rightarrow \{ A \} \rightarrow \{ A \}}$.}
+    {
+    \be \setcounter{enumi}{4}
+        \item $\cForallX {V}{\cFunTyX{A}{\omicron}} V \in \mName{ISOPEN} \Rightarrow \mName{PREIMAGE(V)} \in \mName{ISOPEN}$ 
+        \hfill (Continuity).
+        \item $\cForallX {i}{I} \cIsDefX{\mName{PREIMAGE} (i, \alpha_i, \beta_i)}$
+        \item PREIMAGE = $\cFunAbsX {i} {I} {} \cFunAbsX {\alpha_i, \beta_i} {N} {} \cFunAbsX {f} {\cFunTyX{A^{\alpha_i}}{A^{\beta_i}}} {} \cFunAbsX {V} {\cFunTyX{A^{\beta_i}}{\omicron}} {} \cDefDesX {K} {\cFunTyX{A^{\alpha_i}}{\omicron}} {} \cForallX {x}{K} \cAndX {\cIsDefX{f(x)}} {\cup_{x\in K} f(x) = V}$
+    \ee
+    }
+\end{theory-ext}
+
 \begin{cor}
   Note that since ISOPEN is defined as a predicate, it is total, and hence is defined for any subset of the base set.
 \end{cor}

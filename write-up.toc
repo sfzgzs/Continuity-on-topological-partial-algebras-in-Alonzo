@@ -1,2 +1,5 @@
 \contentsline {section}{\numberline {1}Introduction}{3}{}%
-\contentsline {subsection}{\numberline {1.1}What is a Topological Partial Algebra?}{3}{}%
+\contentsline {section}{\numberline {2}Topological algebra}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Topological algebra in Alonzo}{3}{}%
+\contentsline {section}{\numberline {3}What is a Topological Partial Algebra?}{3}{}%
+\contentsline {subsection}{\numberline {3.1}Topological partial algebra in Alonzo}{4}{}%
